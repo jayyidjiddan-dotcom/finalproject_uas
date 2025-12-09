@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load model
-model = joblib.load("weather_rf_model.pkl")  # ganti sesuai nama file model kamu
+model = joblib.load("weather_temp_model.pkl")  # ganti sesuai nama file model kamu
 
 st.title("Weather Temperature Prediction App")
 st.write("Aplikasi untuk memprediksi suhu berdasarkan parameter cuaca.")
@@ -42,3 +42,4 @@ df = df[model.feature_names_in_]  # urutkan kolom sesuai model
 if st.button("Prediksi Suhu"):
     y_pred = model.predict(df)[0]
     st.success(f"Prediksi Suhu: {y_pred:.2f} °C")
+
